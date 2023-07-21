@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="http://www.algonquincollege.com/onlinestore"
+		   xmlns:alg ="http://www.algonquincollege.com/onlinestore"
+		   elementFormDefault="qualified" >
+	<xs:element name="BookOrders">
+		<xs:complexType>
+			<xs:sequence>
+			    <xs:element name="Channel" type="xs:string" default="Online"/>
+				  <xs:element minOccurs="1" maxOccurs="unbounded" ref="alg:Order" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="alg:Customer" />
+				<xs:element ref="alg:Items" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  
+	<xs:element name="Customer">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="CustomerContact" type="alg:ContactType"/>
+				<xs:element ref="alg:ShippingAddress" />
+        <xs:element ref="alg:BillingInfo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+  <xs:complexType name="ContactType">
+    <xs:sequence>
+      <xs:element name="Name" type="alg:NameType"/>
+      <xs:element name ="Email" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element ref="alg:Phone" minOccurs="1" maxOccurs="3"/>
+      <xs:group ref="alg:AddressGroup"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="ShippingAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="alg:NameType"/>
+        <xs:group ref="alg:AddressGroup"/>
+      </xs:sequence>
+    </xs:complexType>
+	</xs:element>
+
+  <xs:element name="BillingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CreditCardNumber" type="alg:CreditCardNumberType"/>
+        <xs:element name ="CreditCardExpiryMonth" type="xs:gMonth"/>
+        <xs:element name ="CreditCardExpiryYear" type="xs:gYear"/>
+        <xs:element name="Name" type="alg:NameType"/>
+        <xs:group ref="alg:AddressGroup"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="NameType">
+    <xs:sequence>
+      <xs:element name="First" type="xs:string" />
+      <xs:element name="Last" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:group name="AddressGroup">
+    <xs:sequence>
+      <xs:element name="Street" type="xs:string" />
+      <xs:element name="City" type="xs:string" />
+      <xs:element name="Province" type="alg:ProvinceType" />
+      <xs:element name="PostalCode" type="alg:PostalCodeType"/>
+    </xs:sequence>
+  </xs:group>
+	
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="alg:Item" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Item">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="Title" type="xs:string" />
+        <xs:element name="Isbn" type="xs:string" />
+        <xs:element name="FirstAuthor" type="alg:NameType" />
+        <xs:element name="Quantity" type="xs:positiveInteger" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+  <xs:element name="Phone">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="type" type="alg:PhoneType" default="Home"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Home"/>
+      <xs:enumeration value="Office"/>
+      <xs:enumeration value="Mobile"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CreditCardNumberType">
+    <xs:restriction base="xs:string">
+      <xs:length value="16"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name ="PostalCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]\d[a-zA-Z](\s)?\d[a-zA-Z]\d"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ProvinceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ON"/>
+      <xs:enumeration value="QC"/>
+      <xs:enumeration value="BC"/>
+      <xs:enumeration value="ALBT"/>
+      <xs:enumeration value="SK"/>
+      <xs:enumeration value="MB"/>
+      <xs:enumeration value="NL"/>
+      <xs:enumeration value="PEI"/>
+      <xs:enumeration value="NB"/>
+      <xs:enumeration value="NS"/>
+      <xs:enumeration value="NT"/>
+      <xs:enumeration value="NV"/>
+      <xs:enumeration value="YK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

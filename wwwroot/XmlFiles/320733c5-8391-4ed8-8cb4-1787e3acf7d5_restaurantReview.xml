@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lab1 - Algonquinn College Woodroffe-->
+<!-- CST8259 Web Programming Language II-->
+<!-- Student Name: Dieudonne Ntakirutimana -->
+<!-- Student Number: 040991687 -->
+<restaurants xmlns="http://www.algonquincollege.com/cst8259/labs">
+	<restaurant>
+		<name>Restaurant A</name>
+		<website>http://www.restauranta.com</website>
+		<logo source="logo.png">
+			<width>100</width>
+			<height>100</height>
+			<unit>pixels</unit>
+		</logo>
+		<address>
+			<street>123 Main St</street>
+			<city>City A</city>
+			<province>Province A</province>
+			<postalCode>12345</postalCode>
+		</address>
+		<phone>123-456-7890</phone>
+		<rating min="1" max="5">
+			<food>4</food>
+			<price>3</price>
+		</rating>
+		<date>
+			<day>1</day>
+			<month>June</month>
+			<year>2023</year>
+		</date>
+		<reviewer>
+			<summary>Great restaurant!</summary>
+			<menu>
+				<category>Appetizers</category>
+				<menuItem>
+					<name>Item 1</name>
+					<description>Description 1</description>
+					<price currency="CAD">9.99</price>
+				</menuItem>
+				<menuItem>
+					<name>Item 2</name>
+					<description>Description 2</description>
+					<price currency="CAD">12.99</price>
+				</menuItem>
+			</menu>
+		</reviewer>
+	</restaurant>
+</restaurants>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="BookOrder.xslt"?>
+
+<BookOrders xmlns="http://www.algonquincollege.com/onlinestore"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.algonquincollege.com/onlinestore BookOrder.xsd">
+			
+    <Channel></Channel>
+	<Order>
+		<Customer>
+			<CustomerContact>
+			  <Name>
+				  <First>Wei</First>
+				  <Last>Gong</Last>
+				</Name>
+				<Email>gongw@algonquincollege.com</Email>
+				<Phone type="Home">613123456</Phone>
+				<Street>193 Walden Drive</Street>
+				<City>Kanata</City>
+				<Province>ON</Province>
+			  <PostalCode>K2K2K7</PostalCode>
+			</CustomerContact>
+				  <ShippingAddress >
+			  <Name>
+				<First>Wei</First>
+				<Last>Gong</Last>
+			  </Name>
+					  <Street>193 Walden Drive</Street>
+					  <City>Kanata</City>
+					  <Province>ON</Province>
+			  <PostalCode>K2K2K7</PostalCode>
+				</ShippingAddress >
+			<BillingInfo>
+			  <CreditCardNumber>1234567890123456</CreditCardNumber>
+			  <CreditCardExpiryMonth>--05</CreditCardExpiryMonth>
+			  <CreditCardExpiryYear>2012</CreditCardExpiryYear>
+			  <Name>
+				<First>Wei</First>
+				<Last>Gong</Last>
+			  </Name>
+			  <Street>193 Walden Drive</Street>
+			  <City>Kanata</City>
+			  <Province>ON</Province>
+			  <PostalCode>K2K2K7</PostalCode>
+			</BillingInfo >
+		</Customer>
+		<Items>
+			<Item>
+				<Title>PHP Web Application Development</Title>
+        <Isbn>1234567</Isbn>
+        <FirstAuthor>
+          <First>John</First>
+          <Last>Smith</Last>
+        </FirstAuthor>
+				<Quantity>1</Quantity>
+		  </Item>
+		</Items>
+	</Order>
+	
+	<Order>
+		<Customer>
+			<CustomerContact>
+				<Name>
+				  <First>John</First>
+				  <Last>Smith</Last>
+				</Name>
+				<Email>smithj@algonquincollege.com</Email>
+				<Phone type="Mobile">613 1234567</Phone>
+				<Street>100 Woodroff Avenue</Street>
+				<City>Nepean</City>
+				<Province>ON</Province>
+			  <PostalCode>A2B 3C4</PostalCode>
+			</CustomerContact>
+			<ShippingAddress >
+				<Name>
+				  <First>John</First>
+				  <Last>Smith</Last>
+				</Name>
+				<Street>100 Woodroff Avenue</Street>
+				<City>Nepean</City>
+				<Province>ON</Province>
+				<PostalCode>A2B 3C4</PostalCode>
+			</ShippingAddress> 
+			<BillingInfo>
+				<CreditCardNumber>1234567890123456</CreditCardNumber>
+				<CreditCardExpiryMonth>--05</CreditCardExpiryMonth>
+				<CreditCardExpiryYear>2012</CreditCardExpiryYear>
+				<Name>
+				  <First>John</First>
+				  <Last>Smith</Last>
+				</Name>
+				<Street>100 Woodroff Avenue</Street>
+				<City>Nepean</City>
+				<Province>ON</Province>
+				<PostalCode>A2B 3C4</PostalCode>
+			</BillingInfo >
+		</Customer>
+		<Items>
+			<Item>
+				<Title>JSP Expert</Title>
+				<Isbn>78408975</Isbn>
+				<FirstAuthor>
+					<First>Steve</First>
+					<Last>Johnstone</Last>
+				</FirstAuthor>
+				<Quantity>1</Quantity>
+			</Item>
+		  	<Item>
+				<Title>JSP Expert</Title>
+				<Isbn>78408975</Isbn>
+				<FirstAuthor>
+					<First>Steve</First>
+					<Last>Johnstone</Last>
+				</FirstAuthor>
+				<Quantity>1</Quantity>
+			</Item>
+		</Items>
+	</Order>
+	
+</BookOrders>
+

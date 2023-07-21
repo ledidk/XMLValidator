@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<restaurants>
+  <restaurant>
+    <name>Giovanni’s Italia Fine Dinning</name>
+    <food>Italian</food>
+    <price>4</price>
+    <rating>4.00</rating>
+    <address>
+      <street>2100 Lakeview Road</street>
+      <postalCode>K1K 1K1</postalCode>
+      <city>Toronto</city>
+      <province>0</province>
+    </address>
+  </restaurant>
+  <restaurant>
+    <name>Gong’s Asian Cuisine</name>
+    <food>Asian</food>
+    <price>1</price>
+    <rating>5</rating>
+    <address>
+      <street />
+      <postalCode>K2G 1V8</postalCode>
+      <city>Ottawa</city>
+      <province>Ontario</province>
+    </address>
+  </restaurant>
+  <restaurant>
+    <name>Baker Street TexMex Grill</name>
+    <food>Mexican</food>
+    <price>2</price>
+    <rating>3</rating>
+    <address>
+      <street />
+      <postalCode>B1G 1V1</postalCode>
+      <city>Ottawa</city>
+      <province>Ontario</province>
+    </address>
+  </restaurant>
+</restaurants>

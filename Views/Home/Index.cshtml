@@ -1,0 +1,25 @@
+﻿@model XMLValidator.Models.XMLandSchemaFileUpload
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="color:dodgerblue;margin-top:25px;margin-bottom:25px;">XML Validator</h1>
+</div>
+
+<form asp-action="Upload" asp-controller="Home" method="post" enctype="multipart/form-data" style="margin-left:40px;">
+    <div>
+        <label for="SchemaFile">Schema File</label>
+        <input asp-for="SchemaFile" type="file" accept=".xsd" required>
+        <span asp-validation-for="SchemaFile"></span>
+    </div>
+    <br>
+    <div>
+        <label for="XmlFile">XML File</label>
+        <input asp-for="XmlFile" type="file" accept=".xml" required style="margin-left:20px;">
+        <span asp-validation-for="XmlFile"></span>
+    </div>
+    <br>
+    <input type="submit" value="Upload" style="background-color:royalblue; color:white; border-radius: 4px;">
+</form>

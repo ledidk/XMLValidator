@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Define complex types -->
+	<xsd:complexType name="addressType">
+		<xsd:sequence>
+			<xsd:element name="street" type="xsd:string"/>
+			<xsd:element name="city" type="xsd:string"/>
+			<xsd:element name="province" type="xsd:string"/>
+			<xsd:element name="postalCode" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="logoType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="source" type="xsd:string"/>
+				<xsd:attribute name="width" type="xsd:integer"/>
+				<xsd:attribute name="height" type="xsd:integer"/>
+				<xsd:attribute name="unit" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="dateType">
+		<xsd:sequence>
+			<xsd:element name="day" type="xsd:integer"/>
+			<xsd:element name="month" type="xsd:string"/>
+			<xsd:element name="year" type="xsd:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="menuItemType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="price" type="xsd:decimal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="menuType">
+		<xsd:sequence>
+			<xsd:element name="category" type="xsd:string"/>
+			<xsd:element name="menuItem" type="menuItemType" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="restaurantType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="website" type="xsd:string"/>
+			<xsd:element name="logo" type="logoType"/>
+			<xsd:element name="address" type="addressType"/>
+			<xsd:element name="phone" type="xsd:string"/>
+			<xsd:element name="rating" type="xsd:decimal"/>
+			<xsd:element name="food" type="xsd:string"/>
+			<xsd:element name="price" type="xsd:decimal"/>
+			<xsd:element name="date" type="dateType"/>
+			<xsd:element name="reviewer" type="xsd:string"/>
+			<xsd:element name="summary" type="xsd:string"/>
+			<xsd:element name="menu" type="menuType" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="restaurants">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="restaurant" type="restaurantType" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

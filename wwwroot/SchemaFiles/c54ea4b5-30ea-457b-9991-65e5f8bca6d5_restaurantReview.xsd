@@ -1,0 +1,86 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.algonquincollege.com/cst8259/labs" xmlns="http://www.algonquincollege.com/cst8259/labs" elementFormDefault="qualified">
+	<xs:element name="restaurants">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="restaurant" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="website" type="xs:anyURI"/>
+							<xs:element name="logo">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="source" type="xs:string" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="address">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="street" type="xs:string"/>
+										<xs:element name="city" type="xs:string"/>
+										<xs:element name="province" type="xs:string"/>
+										<xs:element name="postalCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="phone" type="xs:string"/>
+							<xs:element name="rating">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="food" type="xs:integer"/>
+										<xs:element name="price" type="xs:integer"/>
+									</xs:sequence>
+									<xs:attribute name="min" type="xs:integer" use="required"/>
+									<xs:attribute name="max" type="xs:integer" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="date">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="day" type="xs:integer"/>
+										<xs:element name="month" type="xs:string"/>
+										<xs:element name="year" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="reviewer">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="summary" type="xs:string"/>
+										<xs:element name="menu">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="category" type="xs:string"/>
+													<xs:element name="menuItem" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="name" type="xs:string"/>
+																<xs:element name="description" type="xs:string"/>
+																<xs:element name="price">
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:decimal">
+																				<xs:attribute name="currency" type="xs:string" use="required"/>
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
